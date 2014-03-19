@@ -1,0 +1,39 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  #FAFAFA;
+
+$title-color:       #363636;
+$moreinfo-color:    lighten($title-color, 15%);
+$value-color:       #005D8C;
+
+.widget-iframe {
+  padding: 3px 0px 0px 0px !important;
+  background-color: $background-color;
+  position: relative;
+
+
+  .title, .value {
+    position: relative;
+    z-index: 99;
+  }
+
+  .title {
+    color: $title-color;
+  }
+
+  .value {
+    color: $value-color;
+  }
+  .more-info {
+    color: $moreinfo-color;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 0;
+  }
+
+  iframe {
+    width: 80%;
+    height: 100%;
+  }
+}
