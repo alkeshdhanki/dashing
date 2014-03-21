@@ -15,7 +15,10 @@ $title-color:       #363636;
   vertical-align: top;
 
   .title {
+    float: center;
     color: $title-color;
+    font-weight: 600;
+    font-size: xx-large;
   }
 
 

@@ -2,6 +2,7 @@
 require 'net/http'
 require 'uri'
 
+
 # Check whether a server is responding
 # you can set a server to check via http request or ping
 #
@@ -12,9 +13,10 @@ require 'uri'
 # if the server you're checking redirects (from http to https for example) the check will
 # return false
 
-servers = [{name: 'Rackroom Production website', url: 'http://www.offbroadwayshoes.com/welcome.html', method: 'http'},
-    {name: 'Rackroom Dev website', url: 'http://offbroadwayshoes.dev:9001/welcome.html', method: 'http'} ,
-    {name: 'Rackroom QA website', url: 'http://stage.offbroadwayshoes.com/welcome.html', method: 'http'}
+servers = [{name: 'Production website', url: 'http://www.offbroadwayshoes.com/welcome.html', method: 'http'},
+   		{name: 'Production Solr', url: 'http://10.193.100.36:8480/solr', method: 'http'},
+   	{name: 'QA website', url: 'http://stage.offbroadwayshoes.com/welcome.html', method: 'http'},
+    {name: 'Dev website', url: 'http://206.17.89.232:9001/welcome.html', method: 'http'} 
 ]
 
 SCHEDULER.every '300s', :first_in => 0 do |job|
@@ -24,13 +26,9 @@ SCHEDULER.every '300s', :first_in => 0 do |job|
 	# check status for each server
 	servers.each do |server|
 		begin
-		puts "Checking server:" + server[:name]
 		if server[:method] == 'http'
 			uri = URI.parse(server[:url])
 			http = Net::HTTP.new(uri.host, uri.port)
-			puts uri.host
-			puts uri.port
-			puts uri.request_uri	
 			if uri.scheme == "https"
 				http.use_ssl=true
 				http.verify_mode = OpenSSL::SSL::VERIFY_NONE
@@ -39,10 +37,8 @@ SCHEDULER.every '300s', :first_in => 0 do |job|
 			response = http.request(request)
 			if response.code == "200" || response.code == "302"
 			 	result = 1
-			 	puts "Response is:" + response.code
 			 else
 			 	result = 0
-			 	puts "Response is:" + response.code
 			 end
 		elsif server[:method] == 'ping'
 			ping_count = 10
@@ -54,7 +50,6 @@ SCHEDULER.every '300s', :first_in => 0 do |job|
 			end
 		end
 		rescue Exception => e
-			puts "Exception while checking server" + e.message
 			result = 0
 		end
 		if result == 1
