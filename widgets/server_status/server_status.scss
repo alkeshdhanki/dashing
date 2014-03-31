@@ -39,10 +39,12 @@ $moreinfo-color:    darken($title-color, 15%);
   }
 
   .label {
+    width: 75%;
     color: $label-color;
   }
 
   .value {
+    width: 25%;
     float: right;
     margin-left: 12px;
     font-weight: 600;

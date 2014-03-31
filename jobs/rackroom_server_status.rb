@@ -13,10 +13,10 @@ require 'uri'
 # if the server you're checking redirects (from http to https for example) the check will
 # return false
 
-servers = [{name: 'Production website', url: 'http://www.offbroadwayshoes.com/welcome.html', method: 'http'},
-   		{name: 'Production Solr', url: 'http://10.193.100.36:8480/solr', method: 'http'},
-   	{name: 'QA website', url: 'http://stage.offbroadwayshoes.com/welcome.html', method: 'http'},
-    {name: 'Dev website', url: 'http://206.17.89.232:9001/welcome.html', method: 'http'} 
+servers = [{name: 'Rackroom Production website', url: 'http://www.offbroadwayshoes.com/welcome.html', method: 'http'},
+   		{name: 'Rackroom Production Solr', url: 'http://10.193.100.36:8480/solr', method: 'http'},
+   	{name: 'Rackroom QA website', url: 'http://stage.offbroadwayshoes.com/welcome.html', method: 'http'},
+    {name: 'Rackroom Dev website', url: 'http://206.17.89.232:9001/welcome.html', method: 'http'} 
 ]
 
 SCHEDULER.every '300s', :first_in => 0 do |job|
