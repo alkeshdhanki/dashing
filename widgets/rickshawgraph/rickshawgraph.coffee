@@ -120,7 +120,7 @@ class Dashing.Rickshawgraph extends Dashing.Widget
     @clear()
 
     # Gross hacks. Let's fix this.
-    width = (Dashing.widget_base_dimensions[0] * $container.data("sizex")) + Dashing.widget_margins[0] * 2 * ($container.data("sizex") - 1)
+    width = (Dashing.widget_base_dimensions[0] * $container.data("sizex")) + Dashing.widget_margins[0] * 2 * ($container.data("sizex") - 10)
     height = (Dashing.widget_base_dimensions[1] * $container.data("sizey"))
 
     if @get("legend")
@@ -168,15 +168,15 @@ class Dashing.Rickshawgraph extends Dashing.Widget
 
     graph.renderer.unstack = !!@get('unstack')
 
-    xAxisOptions =  {
-      graph: graph
+
+    @$x_axisDiv = $("<div class=\"x_axis\"></div>")
+    $node.append(@$x_axisDiv)
+    x_axis = new Rickshaw.Graph.Axis.X {
+    	graph: graph,
+    	ticks: 3
     }
-    if Rickshaw.Fixtures.Time.Local
-      xAxisOptions.timeFixture = new Rickshaw.Fixtures.Time.Local()
-
-      if @get("showxaxis")
-        x_axis = new Rickshaw.Graph.Axis.Time xAxisOptions
-
+    
+    
     @$y_axisDiv = $("<div class=\"y_axis\"></div>")
     $node.append(@$y_axisDiv)
     y_axis = new Rickshaw.Graph.Axis.Y {
@@ -347,6 +347,7 @@ class Dashing.Rickshawgraph extends Dashing.Widget
 
 # Helper functions
 # ================
+
 isString = (obj) ->
   return toString.call(obj) is "[object String]"
 
