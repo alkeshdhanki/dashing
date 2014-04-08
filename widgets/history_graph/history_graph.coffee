@@ -170,8 +170,9 @@ class Dashing.Rickshawgraph extends Dashing.Widget
 
     @$x_axisDiv = $("<div class=\"x_axis\"></div>") 
     $node.append(@$x_axisDiv)
-    x_axis = new Rickshaw.Graph.Axis.Time {
+    x_axis = new Rickshaw.Graph.Axis.X {
     	graph: graph,
+    	ticks: series[0].data.length
     }
     
     
