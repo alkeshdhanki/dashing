@@ -2,6 +2,7 @@
 // Sass declarations
 // ----------------------------------------------------------------------------
 $background-color:  #FAFAFA;
+$value-color:       #005D8C;
 
 $title-color:       #363636;
 $moreinfo-color:    lighten($title-color, 15%);
@@ -14,22 +15,37 @@ $meter-background:  darken($background-color, 15%);
 .widget-meter {
 
   background-color: $background-color;
+  vertical-align: top;
+  
+  h1 { 
+  margin: 0;
+   padding: 0;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+}
 
   input.meter {
     background-color: $meter-background;
     color: #005D8C;
+      margin: 0;
+   padding: 0;
+  margin-bottom: 0px;
   }
 
   .title {
     color: $title-color;
   }
 
-  .more-info {
-    color: $moreinfo-color;
+  .value {
+    color: $value-color;
+    font-size: 40px;
   }
+  
+.more-info {
+  float: left;
+}
 
-  .updated-at {
-    color: #585858;
-  }
 
 }

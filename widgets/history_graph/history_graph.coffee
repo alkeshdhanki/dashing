@@ -1,6 +1,6 @@
 # Rickshawgraph v0.1.0
 
-class Dashing.Rickshawgraph extends Dashing.Widget
+class Dashing.Historygraph extends Dashing.Widget
 
   DIVISORS = [
       {number: 100000000000000000000000,  label: 'Y'},

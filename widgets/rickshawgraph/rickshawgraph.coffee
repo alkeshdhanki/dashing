@@ -168,11 +168,12 @@ class Dashing.Rickshawgraph extends Dashing.Widget
 
     graph.renderer.unstack = !!@get('unstack')
 
-    @$x_axisDiv = $("<div class=\"x_axis\"></div>") 
-    $node.append(@$x_axisDiv)
-    x_axis = new Rickshaw.Graph.Axis.Time {
+    xAxisOptions = {
     	graph: graph,
-    }
+    ticks: series[0].data.length
+    	} 
+    # $node.append(@$x_axisDiv)
+    if @get('showxaxis') then x_axis = new Rickshaw.Graph.Axis.X xAxisOptions
     
     
     @$y_axisDiv = $("<div class=\"y_axis\"></div>")

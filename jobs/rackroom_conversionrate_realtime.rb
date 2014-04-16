@@ -25,7 +25,7 @@ client.authorization = Signet::OAuth2::Client.new(
   :signing_key => key)
  
 # Start the scheduler
-SCHEDULER.every '10s', :first_in => 0 do
+SCHEDULER.every '60s', :first_in => 0 do
  
   # Request a token for our service account
   client.authorization.fetch_access_token!
@@ -52,4 +52,5 @@ csCnt = conversionCount.data.rows[0][0].to_i
 
   # Update the dashboard
 send_event('rackroom_checkout_conversion', current: csCnt*100/vsCnt)
+send_event('rackroom_checkout_conversion', value: csCnt*100/vsCnt)
 end

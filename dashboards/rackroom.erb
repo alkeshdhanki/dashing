@@ -2,16 +2,16 @@
 <div class="gridster">
   <ul>
     <li data-row="1" data-col="1" data-sizex="12" data-sizey="1">
-      <div data-id="clock" data-view="DashboardHeader" data-title="Rackroom Dashboard" ></div>
+      <div data-id="clock" data-view="DashboardHeader" data-title="arvato Systems Dashboard (Client A)" ></div>
     </li>
     <li data-row="2" data-col="1" data-sizex="6" data-sizey="2">
       <div data-id="rackroom_server_status" data-view="ServerStatus" data-title="Server Status" data-moreinfo="More Info: Custom " ></div>
     </li>
     <li data-row="2" data-col="2" data-sizex="6" data-sizey="2">
-      <div data-id="rackroom_cronjob_status" data-view="List" data-title="Cronjobs" data-moreinfo="More Info: Hybris_dashboard_cronjobstatus"></div>
+      <div data-id="rackroom_cronjob_status" data-view="List" data-title="Cronjobs" data-moreinfo="More Info: Hybris_dashboard_cronjobstatus" ></div>
     </li>
     <li data-row="2" data-col="2" data-sizex="6" data-sizey="2">
-      <div data-id="rackroom_iframe_cpu" data-view="Iframe" data-title="CPU Usage" data-moreinfo="New Relic"></div>
+        <div data-id="rackroom_iframe_cpu" data-view="Iframe" data-title="DB Response Time" data-moreinfo="New Relic"></div>
     </li>
     <li data-row="2" data-col="3" data-sizex="6" data-sizey="2">
       <div data-id="rackroom_iframe_db" data-view="Iframe" data-title="DB Response Time" data-moreinfo="New Relic"></div>
@@ -26,16 +26,25 @@
       <div data-id="rackroom_jira_latest" data-view="List" data-title="Latest JIRA Issues" data-moreinfo="More info: JIRA"></div>
     </li>
     <li data-row="2" data-col="7" data-sizex="6" data-sizey="2">
-      <div data-id="rackroom_jira_unreleased" data-view="List" data-title="Unreleased JIRA Issues" data-moreinfo="More info: JIRA"></div>
+      <div data-id="rackroom_jira_unreleased" data-view="List" data-title="JIRA Issues In Upcoming Releases" data-moreinfo="More info: JIRA"></div>
     </li> 
+    <li data-row="2" data-col="10" data-sizex="6" data-sizey="2">
+      <div data-id="rackroom_ordercount2" data-view="Rickshawgraph" data-renderer="bar" data-legend="false" data-unstack="false" data-colors="steelblue" data-showxaxis="true" data-title="Order Count" ></div>
+    </li> 
+    <li data-row="2" data-col="10" data-sizex="6" data-sizey="2">
+      <div data-id="rackroom_fullfillment" data-view="Rickshawgraph" data-renderer="bar" data-legend="true" data-unstack="true" data-colors="steelblue" data-showxaxis="false" data-title="Order Fullfillment" ></div>
+    </li>     
      <li data-row="2" data-col="8" data-sizex="3" data-sizey="2">
       <div data-id="rackroom_visitor_count" data-view="Number" data-title="Active Visitors"  data-moreinfo="More info: Google Analytics"></div>
     </li>   
      <li data-row="2" data-col="9" data-sizex="3" data-sizey="2">
-      <div data-id="rackroom_checkout_conversion" data-view="Number" data-title="Checkout Conversion Rate"  data-suffix="%" data-min="0" data-max="100" data-moreinfo="More info: Google Analytics"></div>
-    </li>      
-    <li data-row="2" data-col="10" data-sizex="6" data-sizey="2">
-      <div data-id="rackroom_ordercount2" data-view="Rickshawgraph" data-renderer="bar" data-legend="false" data-unstack="false" data-colors="steelblue" showxaxis="true" data-title="Order Count" ></div>
-    </li> 
+      <div data-id="rackroom_checkout_conversion" data-view="Meter" data-title="Checkout Conversion Rate"  data-suffix="%" data-min="0" data-max="50" data-moreinfo="More info: Google Analytics"></div>
+    </li>
+	<li data-row="2" data-col="10" data-sizex="3" data-sizey="2">
+      <div data-id="3051262_cpu" data-view="Meter" data-title="CPU usage Hybris" data-min="0" data-max="100" data-suffix="%" data-moreinfo="More Info: New Relic" ></div>
+    </li>  
+    <li data-row="2" data-col="11" data-sizex="3" data-sizey="2">
+      <div data-id="3051262_response_time" data-view="Number" data-title="WebApp Response Time(ms)" data-moreinfo="More Info: New Relic"></div>
+    </li>    
   </ul>
 </div>

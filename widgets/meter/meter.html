@@ -1,7 +1,8 @@
 <h1 class="title" data-bind="title"></h1>
-
-<input class="meter" data-angleOffset=-125 data-angleArc=250 data-width=200 data-readOnly=true data-bind-value="value | shortenedNumber" data-bind-data-min="min" data-bind-data-max="max">
-
-<p class="more-info" data-bind="moreinfo"></p>
-
-<p class="updated-at" data-bind="updatedAtMessage"></p>
+<input class="meter" data-angleOffset=-125 data-angleArc=250 data-width=150 data-height=115 data-readOnly=true data-bind-value="value | shortenedNumber | prepend prefix | append suffix" data-bind-data-min="min" data-bind-data-max="max">
+<ul>
+<li>
+<span class="updated-at" data-bind="updatedAtMessage"></span>
+<span class="more-info" data-bind="moreinfo"></span>
+</li>
+</ul>
