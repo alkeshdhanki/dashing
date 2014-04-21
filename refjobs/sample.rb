@@ -1,3 +1,17 @@
+#require 'dotenv'
+#Dotenv.load
+
+SCHEDULER.every '20s', :first_in => 0 do |job|
+puts "Hi"
+puts "http_proxy" + ENV['http_proxy']
+puts "Env USer:" + ENV['User']
+puts "Env App" + ENV['App']
+end
+
+
+
+
+
 #current_valuation = 0
 #current_karma = 0
 

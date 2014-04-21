@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'dashing'
 #gem 'redcarpet'
 ## Remove this if you don't need a twitter widget.
+gem 'dotenv'
 gem 'rest-client'
 gem 'activeresource'
 gem 'newrelic_api'

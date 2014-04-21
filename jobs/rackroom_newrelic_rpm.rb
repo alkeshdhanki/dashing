@@ -1,10 +1,10 @@
 require 'newrelic_api'
 
 # Newrelic API key
-key = '0f8a22540ec72ad929adbf5c199f9e4e5d0161b835f97f3'
+key = ENV['rackroom.newrelic.api.key']
 
 # Monitored application
-app_ids = ['3051262']
+app_ids = ENV['rackroom.newrelic.appids'].to_str.split(',')
 
 
 # Emitted metrics:
@@ -25,8 +25,8 @@ SCHEDULER.every '300s', :first_in => 0 do |job|
   newrelicapp = NewRelicApi::Account.find(:first).applications.select{|app| app.id.to_s == appid }.first
 
     newrelicapp.threshold_values.each do |v|
-      puts appid + "_" + v.name.downcase.gsub(/ /, '_')
-      puts v.metric_value
+      #puts appid + "_" + v.name.downcase.gsub(/ /, '_')
+      #puts v.metric_value
     	send_event(appid + "_" + v.name.downcase.gsub(/ /, '_'), { current: v.metric_value })
       	send_event(appid + "_" + v.name.downcase.gsub(/ /, '_'), { value: v.metric_value })
     end

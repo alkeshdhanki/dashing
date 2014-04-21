@@ -2,11 +2,11 @@ require 'rest-client'
 require 'uri'
 require 'date'
 
-username = "alkesh.dhanki@arvatosystems.com"
-password = "alkesh.dhanki"
-projectkey = "OBSO"
+username = ENV['rackroom.jira.username']
+password = ENV['rackroom.jira.password']
+projectkey = ENV['rackroom.jira.projectkey']
 
-resturl='https://www.arvatosystems-us.com/jira/rest/api/2/'
+resturl= ENV['rackroom.jira.resturl']
 searchpath='search?jql=project='+projectkey+' order by created'
 
 

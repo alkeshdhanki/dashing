@@ -2,10 +2,10 @@ require 'google/api_client'
 require 'date'
  
 # Update these to match your own apps credentials
-service_account_email = '353734691065-1r41bb63u5s1c1idktbcm6df0120hsnt@developer.gserviceaccount.com' # Email of service account
-key_file = 'security/d4199fd852456e215ce835fea52b6e067a23fdfb-privatekey.p12' # File containing your private key
-key_secret = 'notasecret' # Password to unlock private key
-profileID = '63130441' # Analytics profile ID.
+service_account_email = ENV['rackroom.ga.service_account_email'] # Email of service account
+key_file = ENV['rackroom.ga.key_file'] # File containing your private key
+key_secret = ENV['rackroom.ga.key_secret'] # Password to unlock private key
+profileID = ENV['rackroom.ga.profileID'] # Analytics profile ID.
 
 # Get the Google API client
 client = Google::APIClient.new(

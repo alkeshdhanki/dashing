@@ -1,3 +1,7 @@
+require 'dotenv'
+Dotenv.load
+puts "Loaded env variables"
+
 require 'dashing'
 #require 'redcarpet'
 

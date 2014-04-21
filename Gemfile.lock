@@ -33,6 +33,7 @@ GEM
       sprockets
       thin
       thor
+    dotenv (0.10.0)
     eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -126,6 +127,7 @@ PLATFORMS
 DEPENDENCIES
   activeresource
   dashing
+  dotenv
   execjs (= 1.4.0)
   google-api-client
   htmlentities
