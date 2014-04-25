@@ -33,6 +33,13 @@ SCHEDULER.every '10m', :first_in => 0 do |job|
 		
 	end
  	puts testresults
- 	send_event('rackroom_selenium_results', {items: testresults})
+ 	testsummary = "Total: " + (passedtests.length  + failedtests.length).to_s
+ 	testsummary = testsummary + " "
+ 	testsummary = testsummary + "Passed: " + passedtests.length.to_s
+ 	testsummary = testsummary + " "
+ 	testsummary = testsummary + "Failed: " + failedtests.length.to_s
+ 	testsummary = testsummary + " "
+ 	puts testsummary
+ 	send_event('rackroom_selenium_results', {items: testresults, summary: testsummary })
 end
 
