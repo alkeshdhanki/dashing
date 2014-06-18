@@ -1,0 +1,1 @@
+class Dashing.Index extends Dashing.Widget
